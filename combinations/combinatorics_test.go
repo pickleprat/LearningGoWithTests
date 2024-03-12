@@ -59,5 +59,23 @@ func TestSequencesSimple(t *testing.T){
     assertIncorrectLength(t, want, got);
     assertVectorMatching(t, want, got); 
   })
+}
 
+
+func BenchmarkSequences(b *testing.B){
+  names := [] string {
+    "pratyush", 
+    "farheena", 
+    "bianca", 
+    "anam", 
+    "faridi", 
+  }
+  
+  var name string; 
+  var vector []string; 
+  for i := 0; i < b.N; i++{
+    vector = [] string{}; 
+    name = names[i%len(names)]
+    Sequences(name, 0, "", &vector)
+  }
 }

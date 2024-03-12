@@ -3,6 +3,7 @@ package combinations;
 import (
   "fmt" 
 ) 
+    
 func SequencesSimple(str string) [] string {
   var vector [] string; 
   for i := 0; i < len(str); i++{
