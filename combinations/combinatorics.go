@@ -1,8 +1,5 @@
 package combinations; 
-
-import (
-  "fmt" 
-) 
+ 
     
 func SequencesSimple(str string) [] string {
   var vector [] string; 
@@ -15,15 +12,15 @@ func SequencesSimple(str string) [] string {
   return vector; 
 }
 
-func Permute(arr [] int, index int, vector [] int){
-  if index == len(arr){
-    fmt.Println(vector); 
-    return; 
-  }
+// func Permute(arr [] int, index int, vector [] int){
+//   if index == len(arr){
+//     fmt.Println(vector); 
+//     return; 
+//   }
 
-  Permute(arr, index+1, append(vector, arr[index])); 
-  Permute(arr, index+1, vector); 
-}
+//   Permute(arr, index+1, append(vector, arr[index])); 
+//   Permute(arr, index+1, vector); 
+// }
 
 func Sequences(str string, index int, substr string, vector *[] string){
 

@@ -1,7 +1,8 @@
-package combinations; 
+package combinations
 
 import (
-  "testing"
+	"fmt"
+	"testing"
 )
 
 func assertIncorrectLength(t *testing.T, want, got [] string){
@@ -78,4 +79,27 @@ func BenchmarkSequences(b *testing.B){
     name = names[i%len(names)]
     Sequences(name, 0, "", &vector)
   }
+}
+
+func BenchmarkSequencesSimple(b *testing.B){
+  names := [] string {
+    "pratyush", 
+    "farheena", 
+    "bianca", 
+    "anam", 
+    "faridi", 
+  }
+  var name string; 
+  for i := 0; i < b.N; i++{
+    name = names[i%len(names)]; 
+    SequencesSimple(name);  
+  }
+  
+}
+
+func ExampleSequences(){
+  var vector [] string; 
+  Sequences("abc", 0, "", &vector);
+  fmt.Println(vector); 
+  //Output: [abc ab a bc b c ]
 }
